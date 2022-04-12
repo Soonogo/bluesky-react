@@ -4,10 +4,17 @@ import Money from './views/Money';
 import Statistics from './views/Statistics';
 import Tags from './views/Tags';
 import NoMatch from './views/NoMatch';
+import styled from "styled-components";
 
+const Wrapper = styled.div`
+  color: blueviolet;
+  background-color: #fafafa;
+`;
 
 function App() {
   return (
+    <Wrapper>
+
     <Router>
       <Switch>
         <Route path="/tags">
@@ -25,6 +32,8 @@ function App() {
         </Route>
       </Switch>
     </Router>
+    </Wrapper>
+
   );
 }
 
