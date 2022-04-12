@@ -15,6 +15,7 @@ const Layout = (props: any) => {
   return (
     <Wrapper>
       <Main>
+        {console.log(props.children)}
         {props.children}
       </Main>
       <Nav/>
