@@ -26,7 +26,22 @@ const TagsSection = styled.section`
   }
 `
 const NotesSection = styled.section`
-  
+  background: aquamarine;
+  padding: 0 16px;
+  > label{
+    display: flex;
+    align-items: center;  
+    > span{
+      margin-right: 16px;
+      white-space: nowrap;
+    }
+    > input{
+      border: none;
+      background: none;
+      height: 72px;
+      width: 100%;  
+    }
+  }
 `
 const CategorySection = styled.section`
 
@@ -51,7 +66,7 @@ function Money() {
       <NotesSection>
         <label >
           <span>记账备注</span>
-          <input type="checkbox" />
+          <input type="text" placeholder="在这里写备注" />
         </label>
       </NotesSection>
       <CategorySection>
