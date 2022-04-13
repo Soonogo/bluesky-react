@@ -4,7 +4,7 @@ import styled from "styled-components";
 import {CategorySection} from "./Money/CategorySection";
 import {NotesSection} from "./Money/NotesSection";
 import {NumberPadSection} from "./Money/NumberPadSection";
-import {TagsSection} from "./Money/TagsSection";
+import {TagSection} from "./Money/TagsSection";
 
 
 const MyLayout = styled(Layout)`
@@ -15,15 +15,7 @@ const MyLayout = styled(Layout)`
 function Money() {
   return (
     <MyLayout>
-      <TagsSection>
-          <ul>
-            <li>衣</li>
-            <li>食</li>
-            <li>住</li>
-            <li>行</li>
-          </ul>
-        <button>新增标签</button>
-      </TagsSection>
+      <TagSection/>
       <NotesSection>
         <label >
           <span>记账备注</span>
