@@ -1,115 +1,15 @@
 import Layout from '../components/Layout';
 import React from 'react';
 import styled from "styled-components";
+import {CategorySection} from "./Money/CategorySection";
+import {NotesSection} from "./Money/NotesSection";
+import {NumberPadSection} from "./Money/NumberPadSection";
+import {TagsSection} from "./Money/TagsSection";
 
-const TagsSection = styled.section`
-  background-color: #fafafa;
-  padding: 12px 16px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  
-  > ul{
-    margin: 0 -6px;
-      > li{
-        background: lightcoral;
-        border-radius: 18px;
-        display: inline-block;
-        padding: 3px 18px;
-        font-size: 14px;
-        margin: 8px 8px;
-      }
-  }
 
-  > button{
-      background: none;
-      border: none;
-      padding: 0 4px;
-      border-bottom: 1px solid #ccc;
-      color: #999;
-  }
-`
-const NotesSection = styled.section`
-  background: aquamarine;
-  padding: 0 16px;
-  > label{
-    display: flex;
-    align-items: center;  
-    > span{
-      margin-right: 16px;
-      white-space: nowrap;
-    }
-    > input{
-      border: none;
-      background: none;
-      height: 72px;
-      width: 100%;  
-    }
-  }
-`
-const CategorySection = styled.section`
-  font-size: 24px;
-  > ul{
-    background: darkseagreen;
-    display: flex;
-    >li{
-      text-align: center;
-      width: 50%;
-      padding: 12px 0;
-      position: relative;
-      &.selected::after{
-        content: '';
-        background: #333;
-        display: block;
-        height: 3px;
-        position: absolute;
-        width: 100%;
-        bottom: 0;
-        left: 0;
-      }
-    }
-  }
-`
-const NumberPadSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  > .output{
-    background: white;
-    font-size: 36px;
-    line-height: 72px;
-    text-align: right;
-    padding: 0 16px;
-    box-shadow: inset 0 -5px 5px -5px rgba(0,0,0,.2),inset 0 5px 5px -5px rgba(0,0,0,.2);
-  }
-  > .pad{
-    > button{
-      width: 25%;
-      height: 72px;
-      float: left;
-      border: none;
-      &.zero{
-        width: 50%;
-      }
-      &.ok{
-        height: 144px;
-        float: right;
-      }
-    &:nth-child(1){
-      background: blue;
-    }
-    &:nth-child(2){
-      background: green;
-    }
-  }
-  }
-
-`
 const MyLayout = styled(Layout)`
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
 `
 
 function Money() {
