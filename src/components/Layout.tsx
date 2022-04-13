@@ -15,7 +15,6 @@ const Layout = (props: any) => {
   return (
     <Wrapper>
       <Main className={props.className}>
-        {console.log(props.children)}
         {props.children}
       </Main>
       <Nav/>
