@@ -67,7 +67,38 @@ const CategorySection = styled.section`
   }
 `
 const NumberPadSection = styled.section`
-  
+  display: flex;
+  flex-direction: column;
+  > .output{
+    background: white;
+    font-size: 36px;
+    line-height: 72px;
+    text-align: right;
+    padding: 0 16px;
+    box-shadow: inset 0 -5px 5px -5px rgba(0,0,0,.2),inset 0 5px 5px -5px rgba(0,0,0,.2);
+  }
+  > .pad{
+    > button{
+      width: 25%;
+      height: 72px;
+      float: left;
+      border: none;
+      &.zero{
+        width: 50%;
+      }
+      &.ok{
+        height: 144px;
+        float: right;
+      }
+    &:nth-child(1){
+      background: blue;
+    }
+    &:nth-child(2){
+      background: green;
+    }
+  }
+  }
+
 `
 
 
@@ -96,8 +127,10 @@ function Money() {
         </ul>
       </CategorySection>
       <NumberPadSection>
-        <div>100</div>
-        <div>
+        <div className="output">
+          100
+        </div>
+        <div className="pad clearfix" >
           <button>1</button>
           <button>2</button>
           <button>3</button>
@@ -109,8 +142,8 @@ function Money() {
           <button>7</button>
           <button>8</button>
           <button>9</button>
-          <button>OK</button>
-          <button>0</button>
+          <button className="ok">OK</button>
+          <button className="zero">0</button>
           <button>.</button>
         </div>
       </NumberPadSection>
