@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import React, {useState} from "react";
-import {type} from "os";
 
 const Wrapper = styled.section`
   font-size: 24px;
@@ -43,7 +42,7 @@ const CategorySection:React.FC = () => {
     <Wrapper>
       <ul>
         {x.map((c) =>
-          <li className={category === c ? "selected" : ''}
+          <li key={c} className={category === c ? "selected" : ''}
             onClick={() => {setCategory(c);}}
           >{categoryMap[c]}
           </li>
