@@ -28,3 +28,8 @@ button{
   display: block;
   clear: both;
 }
+.oneLine{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
