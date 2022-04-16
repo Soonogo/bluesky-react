@@ -38,33 +38,32 @@ const Wrapper = styled.section`
 `;
 
 type Props = {
-  value: string[],
-  onChange: (select: string[]) => void
+  value: number[],
+  onChange: (select: number[]) => void
 }
 const TagSection: React.FC<Props> = (props) => {
   const {tags,setTags} = useTags()
-  const selectTag = props.value;
+  const selectTagIds = props.value;
   const onAddTag = () => {
     const tagName = window.prompt("标签名为");
-    tagName && setTags([...tags, tagName]);
+    tagName && setTags([...tags, {id:Math.random(),name:tagName}]);
   };
-  const onToggleTag = (tag: string) => {
-    const index = selectTag.indexOf(tag);
+  const onToggleTag = (tagId: number) => {
+    const index = selectTagIds.indexOf(tagId);
     if (index > -1) {
-      props.onChange(selectTag.filter((t) => t !== tag));
+      props.onChange(selectTagIds.filter((t) => t !== tagId));
     } else {
-      props.onChange([...selectTag, tag]);
+      props.onChange([...selectTagIds, tagId]);
     }
   };
   return (
     <>
-      {/* eslint-disable-next-line react/jsx-pascal-case */}
       <Wrapper>
         <ul>
           {tags.map((tag) =>
-            <li key={tag} onClick={() => onToggleTag(tag)}
-                className={selectTag.indexOf(tag) > -1 ? "selected" : ""}>
-              {tag}
+            <li key={tag.id} onClick={() => onToggleTag(tag.id)}
+                className={selectTagIds.indexOf(tag.id) > -1 ? "selected" : ""}>
+              {tag.name}
             </li>
           )}
         </ul>
