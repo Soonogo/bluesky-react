@@ -7,14 +7,20 @@ import Layout from "components/Layout";
 import {Button} from "components/Button";
 import styled from "styled-components";
 import {Input} from "../components/Input";
+import {Space} from "../components/Space";
+import {Center} from "../components/Center";
 
 const Topbar = styled.header`
   display: flex;
   justify-content: space-between;
-  margin: 12px 0 ;
-  padding: 0 12px;
+  padding: 14px;
+  line-height: 20px;
+  background: gainsboro;
 `
-
+const InputWrapper=styled.div`
+  background: gainsboro;
+  margin-top: 16px;
+`
 type Params={
   id:string
 }
@@ -29,10 +35,16 @@ const Tag: React.FC = (props) => {
         <span>编辑标签</span>
         <Icon />
       </Topbar>
-      <div>
-       <Input label="标签名" type="text" placeholder={tag.name}/>{tag.name}
-      </div>
-      <Button asd="asd"/>
+      <InputWrapper>
+       <Input label="标签名" type="text" placeholder={tag.name}/>
+      </InputWrapper>
+      <Space/>
+      <Space/>
+      <Space/>
+      <Center>
+        <Button asd="asd"/>
+
+      </Center>
 
     </Layout>
   );
