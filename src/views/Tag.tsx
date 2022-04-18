@@ -16,40 +16,56 @@ const Topbar = styled.header`
   padding: 14px;
   line-height: 20px;
   background: gainsboro;
-`
-const InputWrapper=styled.div`
+`;
+const InputWrapper = styled.div`
   background: gainsboro;
   margin-top: 16px;
-`
-type Params={
-  id:string
+`;
+type Params = {
+  id: string
 }
 const Tag: React.FC = (props) => {
-  const {findTag,updateTag} = useTags();
+  const {findTag, updateTag, deleteTag} = useTags();
   let {id} = useParams<Params>();
   const tag = findTag(parseInt(id));
-  return (
-    <Layout>
-      <Topbar>
-        <Icon name="left"/>
-        <span>编辑标签</span>
-        <Icon />
-      </Topbar>
+  const tagContent = (tag: { id: number; name: string }) => (
+    <div>
       <InputWrapper>
-       <Input label="标签名" type="text" placeholder={tag.name}
-              onChange={e=>{
-                updateTag(tag.id,{name:e.target.value})
-              }}
-       />
+        <Input label="标签名" type="text" placeholder={tag.name}
+               onChange={e => {
+                 updateTag(tag.id, {name: e.target.value});
+               }}
+        />
       </InputWrapper>
       <Space/>
       <Space/>
       <Space/>
       <Center>
-        <Button asd="asd"/>
+        <Button onClick={() => {
+          deleteTag(tag.id);
+          window.history.back();
+        }}>删除</Button>
       </Center>
-    </Layout>
+    </div>
   );
+
+  if (tag) {
+    return (
+      <Layout>
+        <Topbar>
+          <Icon name="left"/>
+          <span>编辑标签</span>
+          <Icon/>
+        </Topbar>
+        {tag ? tagContent(tag) : <div>111</div>}
+      </Layout>
+    );
+  } else {
+    return (
+      <div>不存在</div>
+    );
+  }
+
 };
 
 export {Tag};

@@ -46,7 +46,7 @@ function Tags() {
         <Space/>
         <Space/>
         <Space/>
-        <Button asd="xinzeng">新增标签</Button>
+        <Button>新增标签</Button>
       </Center>
     </Layout>
   );
