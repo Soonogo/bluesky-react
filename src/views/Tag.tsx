@@ -6,6 +6,7 @@ import Icon from "components/Icon";
 import Layout from "components/Layout";
 import {Button} from "components/Button";
 import styled from "styled-components";
+import {Input} from "../components/Input";
 
 const Topbar = styled.header`
   display: flex;
@@ -29,13 +30,10 @@ const Tag: React.FC = (props) => {
         <Icon />
       </Topbar>
       <div>
-        <label>
-          <span>备注</span>
-          <input type="text" placeholder="在这里写备注"
-          />
-          <Button>删除</Button>
-        </label>
+       <Input label="标签名" type="text" placeholder={tag.name}/>{tag.name}
       </div>
+      <Button asd="asd"/>
+
     </Layout>
   );
 };

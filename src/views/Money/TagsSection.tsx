@@ -68,7 +68,6 @@ const TagSection: React.FC<Props> = (props) => {
             </li>
           )}
         </ul>
-        <button onClick={onAddTag}>新增标签</button>
       </Wrapper>
     </>
   );
