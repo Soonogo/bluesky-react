@@ -1,14 +1,14 @@
 import React from "react";
-import {useTags} from "../useTags";
+import {useTags} from "hooks/useTags";
 
 import {useParams,useHistory} from "react-router-dom";
 import Icon from "components/Icon";
 import Layout from "components/Layout";
 import {Button} from "components/Button";
 import styled from "styled-components";
-import {Input} from "../components/Input";
-import {Space} from "../components/Space";
-import {Center} from "../components/Center";
+import {Input} from "components/Input";
+import {Space} from "components/Space";
+import {Center} from "components/Center";
 
 const Topbar = styled.header`
   display: flex;
@@ -26,7 +26,7 @@ type Params = {
 }
 
 const Tag: React.FC = (props) => {
-  const {findTag, updateTag} = useTags();
+  const {findTag, updateTag,deleteTag} = useTags();
   let {id} = useParams<Params>();
   const tag = findTag(parseInt(id));
   const tagContent = (tag: { id: number; name: string }) => (
@@ -42,7 +42,7 @@ const Tag: React.FC = (props) => {
       <Space/>
       <Space/>
       <Center>
-        <Button onClick={onClickBack}>删除</Button>
+        <Button onClick={()=>deleteTag(tag.id)}>删除</Button>
       </Center>
     </div>
   );

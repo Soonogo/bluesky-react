@@ -5,6 +5,7 @@ import {CategorySection} from "./Money/CategorySection";
 import {NumberPadSection} from "./Money/NumberPadSection";
 import {TagSection} from "./Money/TagsSection";
 import {NoteSection} from "./Money/NoteSection";
+import {useRecords} from "../hooks/useRecords";
 
 
 const MyLayout = styled(Layout)`
@@ -23,9 +24,14 @@ function Money() {
   const onChange = (obj:Partial<typeof selected>)=>{
     setSelected({...selected,...obj})
   }
+  const {addRecord,records}=useRecords()
+  const submit=()=>{
+    addRecord(selected)
+  }
   return (
     <MyLayout >
-      <TagSection value={selected.tagIds}
+      {JSON.stringify(selected)}
+        <TagSection value={selected.tagIds}
                   onChange={tagIds=>onChange({tagIds})}/>
       <NoteSection value={selected.note}
                    onChange={note=>{onChange({note})}} />
@@ -33,7 +39,7 @@ function Money() {
                        onChange={category=>{onChange({category})}} />
       <NumberPadSection value={selected.amount}
                         onChange={amount=>{onChange({amount})}}
-                        onOK={()=>{}}
+                        onOK={()=>{submit()}}
         />
     </MyLayout>
   );

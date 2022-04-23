@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
-import {createId} from "./lib/createId";
-import {useUpdate} from "./hooks/useUpdate";
+import {createId} from "../lib/createId";
+import {useUpdate} from "./useUpdate";
 
 
 const useTags = () => {
@@ -37,6 +37,7 @@ const useTags = () => {
   };
   const deleteTag = (id:number)=>{
     setTags(tags.filter(tag=>tag.id!==id))
+    console.log(1);
   }
   const addTag = () => {
     const tagName = window.prompt("标签名为");
