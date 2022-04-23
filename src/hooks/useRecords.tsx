@@ -18,8 +18,12 @@ export const useRecords = () => {
   }, []);
 
   const addRecord = (newRecord: newRecordItem) => {
+    if (newRecord.amount <= 0) {return alert("请输入金额");}
+    if (newRecord.tagIds.length < 1) {alert("添加个标签把");}
     const record = {...newRecord, createAt: (new Date()).toISOString()};
     setRecords([...records, record]);
+    alert("保存成功");
+
   };
 
   useUpdate(() => {
