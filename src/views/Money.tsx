@@ -14,19 +14,23 @@ const MyLayout = styled(Layout)`
 `
 type Category = '-' | '+'
 
+const defaultFormData={
+  tagIds: [] as number[],
+  note: '',
+  category: '-' as Category,
+  amount: 0
+}
+
 function Money() {
-  const [selected, setSelected] = useState({
-    tagIds: [] as number[],
-    note: '',
-    category: '-' as Category,
-    amount: 0
-  });
+  const [selected, setSelected] = useState(defaultFormData);
   const onChange = (obj:Partial<typeof selected>)=>{
     setSelected({...selected,...obj})
   }
   const {addRecord,records}=useRecords()
   const submit=()=>{
     addRecord(selected)
+    alert('保存成功')
+    setSelected(defaultFormData)
   }
   return (
     <MyLayout >
