@@ -2,6 +2,7 @@
   "name": "morney-13",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://songenen.github.io/bs-website/",
   "dependencies": {
     "@babel/core": "7.9.0",
     "@svgr/webpack": "4.3.3",
@@ -74,7 +75,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "deploy": "sh scripts/depoly.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
