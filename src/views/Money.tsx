@@ -26,7 +26,7 @@ function Money() {
   const onChange = (obj:Partial<typeof selected>)=>{
     setSelected({...selected,...obj})
   }
-  const {addRecord,records}=useRecords()
+  const {addRecord}=useRecords()
   const submit=()=>{
     if (addRecord(selected)){
       setSelected(defaultFormData)

@@ -22,16 +22,16 @@ const useTags = () => {
   useUpdate(() => {
     window.localStorage.setItem("tags", JSON.stringify(tags));
   }, tags);
-  const findTagIndex = (id: number) => {
-    let result = -1;
-    for (let i = 0; i < tags.length; i++) {
-      if (tags[i].id === id) {
-        result = i;
-        break;
-      }
-    }
-    return result;
-  };
+  // const findTagIndex = (id: number) => {
+  //   let result = -1;
+  //   for (let i = 0; i < tags.length; i++) {
+  //     if (tags[i].id === id) {
+  //       result = i;
+  //       break;
+  //     }
+  //   }
+  //   return result;
+  // };
   const updateTag = (id: number, obj: { name: string }) => {
     setTags(tags.map(tag => tag.id === id ? {id, name: obj.name} : tag));
   };
