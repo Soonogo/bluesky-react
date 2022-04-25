@@ -21,7 +21,7 @@ const useTags = () => {
   }, []);
   useUpdate(() => {
     window.localStorage.setItem("tags", JSON.stringify(tags));
-  }, [tags]);
+  }, tags);
   const findTagIndex = (id: number) => {
     let result = -1;
     for (let i = 0; i < tags.length; i++) {
