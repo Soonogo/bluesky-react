@@ -33,3 +33,11 @@ button,input{
   white-space: nowrap;
   overflow: hidden;
 }
+@media (min-width: 500px) {
+  body{
+    width: 600px;
+    margin: 0 auto;
+
+  }
+
+}

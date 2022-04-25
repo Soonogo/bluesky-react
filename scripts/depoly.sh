@@ -4,6 +4,6 @@ cd build &&
 git init &&
 git add . &&
 git commit -m 'deploy' &&
-git remote add origin git@github.com:songenen/bs-website.git &&
+git remote add origin git@github.com:songenen/mo-web.git &&
 git push -u origin master -f &&
 cd -
