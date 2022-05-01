@@ -57,6 +57,7 @@ const TagSection: React.FC<Props> = (props) => {
     <>
       <Wrapper>
         <ul>
+
           {tags.map((tag) =>
             <li key={tag.id} onClick={() => onToggleTag(tag.id)}
                 className={selectTagIds.indexOf(tag.id) > -1 ? "selected" : ""}>
