@@ -5,6 +5,7 @@ import {RecordItem, useRecords} from "../hooks/useRecords";
 import {useTags} from "../hooks/useTags";
 import day from "dayjs";
 import styled from "styled-components";
+import {REcharts} from "./REcharts";
 
 const Item = styled.div`
   display: flex;
@@ -30,7 +31,23 @@ function Statistics() {
   const {getName} = useTags();
   const hash: { [K: string]: RecordItem[] } = {};
   const selectedRecords = records.filter(r => r.category === category);
-
+  const [opt,setOpt] =useState({
+    title: {
+      text: 'ECharts 入门示例'
+    },
+    tooltip: {},
+    xAxis: {
+      data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+    },
+    yAxis: {},
+    series: [
+      {
+        name: '销量',
+        type: 'bar',
+        data: [5, 20, 36, 10, 10, 20]
+      }
+    ]
+  })
   selectedRecords.forEach(r => {
     const key = day(r.createAt).format("YYYY-MM-DD");
     if (!(key in hash)) {
@@ -38,16 +55,14 @@ function Statistics() {
     }
     hash[key].push(r);
   });
-  console.log(hash);
-  console.log(Object.entries(hash));
   const array = Object.entries(hash).sort((a,b)=>{
     if(a[0]===b[0])return 0
     if(a[0]>b[0])return -1
     if(a[0]<b[0])return 1
     return 0
   })
-  return (
 
+  return (
     <Layout>
       <CategorySection value={category}
                        onChange={value => {setCategory(value);}}/>
@@ -72,6 +87,7 @@ function Statistics() {
             </Item>;
           })}
         </div>
+          <REcharts opt={opt} />
         </div>
 
       })}
