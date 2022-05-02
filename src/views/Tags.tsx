@@ -4,7 +4,7 @@ import {useTags} from "../hooks/useTags";
 import Icon from 'components/Icon';
 import styled from "styled-components";
 import {Link} from 'react-router-dom';
-import {Button} from "../components/Button";
+import {CButton} from "../components/Button";
 import {Center} from "../components/Center";
 import {Space} from "../components/Space";
 
@@ -41,7 +41,7 @@ function Tags() {
         <Space/>
         <Space/>
         <Space/>
-        <Button onClick={addTag}>新增标签</Button>
+        <CButton onClick={addTag}>新增标签</CButton>
       </Center>
     </Layout>
   );

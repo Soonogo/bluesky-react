@@ -4,7 +4,7 @@ import {useTags} from "hooks/useTags";
 import {useParams,useHistory} from "react-router-dom";
 import Icon from "components/Icon";
 import Layout from "components/Layout";
-import {Button} from "components/Button";
+import {CButton} from "components/Button";
 import styled from "styled-components";
 import {Input} from "components/Input";
 import {Space} from "components/Space";
@@ -42,7 +42,7 @@ const Tag: React.FC = (props) => {
       <Space/>
       <Space/>
       <Center>
-        <Button onClick={()=>deleteTag(tag.id)}>删除</Button>
+        <CButton onClick={()=>deleteTag(tag.id)}>删除</CButton>
       </Center>
     </div>
   );

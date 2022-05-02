@@ -32,6 +32,11 @@ const Wrapper = styled.section`
         float: right;
         right:3px
       }
+      @media (max-width: 768px) {
+        &.ok {
+          margin-right: .5em !important;
+        }
+      }
 
       &:nth-child(1) {
       }

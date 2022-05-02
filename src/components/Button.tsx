@@ -1,10 +1,12 @@
 import styled from "styled-components";
+import { Button} from 'antd';
 
-const Button = styled.button`
-  font-size: 18px; border: none; padding: 8px 12px;
-  background: #f60; border-radius: 4px;
-  color: white;
+const CButton = styled(Button)`
+  @media(max-width: 768px) {
+    margin : -0.5px !important;
+    
+  }
 `;
 
 
-export {Button}
+export {CButton}
