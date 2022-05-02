@@ -3,6 +3,7 @@ import {Wrapper} from "./NumberPadSection/Wrapper";
 import {generateOutput} from "./NumberPadSection/generateOutput";
 // import { Button} from 'antd';
 import {CButton} from "../../components/Button";
+import {useHistory} from "react-router-dom";
 
 type Props = {
   value: number,
@@ -24,11 +25,16 @@ const NumberPadSection: React.FC<Props> = (props) => {
     _setOutput(newOutput);
     props.onChange(parseFloat(newOutput));
   };
+  const history = useHistory();
   const onButtonWrapper = (e: React.MouseEvent) => {
     const text = (e.target as HTMLButtonElement).textContent;
     if (text === null) {return;}
     if (text === "OK") {
       props.onOK && props.onOK();
+      setTimeout(()=>{
+        history.push('/chart');
+
+      },1000)
     }
     if ("0123456789.".split("").concat("删 除", "清 空").indexOf(text) > -1) {
       setOutput(generateOutput(text, output));
@@ -52,7 +58,9 @@ const NumberPadSection: React.FC<Props> = (props) => {
         <CButton >7</CButton>
         <CButton >8</CButton>
         <CButton >9</CButton>
-        <CButton  className="ok">OK</CButton>
+        <CButton  className="ok">
+        OK
+        </CButton>
         <CButton  className="zero">0</CButton>
         <CButton >.</CButton>
       </div>

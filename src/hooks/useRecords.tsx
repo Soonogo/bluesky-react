@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {useUpdate} from "./useUpdate";
+import {message} from "antd";
 
 export type RecordItem = {
   tagIds: number[]
@@ -19,11 +20,13 @@ export const useRecords = () => {
 
   const addRecord = (newRecord: newRecordItem) => {
     if (newRecord.amount <= 0) {
-      alert("请输入金额")
+      message.info('请输入金额');
+
       return false
         ;}
     if (newRecord.tagIds.length < 1) {
-      alert("添加个标签把")
+      message.info('添加个标签把');
+
       return false
     }else{
       const record = {...newRecord, createAt: (new Date()).toISOString()};

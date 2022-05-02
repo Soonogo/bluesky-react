@@ -6,7 +6,7 @@ import {NumberPadSection} from "./Money/NumberPadSection";
 import {TagSection} from "./Money/TagsSection";
 import {NoteSection} from "./Money/NoteSection";
 import {useRecords} from "../hooks/useRecords";
-
+import {message} from "antd";
 
 const MyLayout = styled(Layout)`
   display: flex;
@@ -30,7 +30,8 @@ function Money() {
   const submit=()=>{
     if (addRecord(selected)){
       setSelected(defaultFormData)
-      alert('保存成功')
+      message.info('保存成功');
+
     }
   }
 
