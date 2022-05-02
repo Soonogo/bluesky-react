@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import React, {ChangeEventHandler} from "react";
-import {Input} from "components/Input";
+// import {Input} from "components/Input";
+import { Input } from 'antd';
+
 
 const Wrapper = styled.section`
-  background: aquamarine;
-  padding: 0 16px;
+  //background: aquamarine;
+  padding: 0 ;
 `;
 
 type Props = {
@@ -19,7 +21,7 @@ const NoteSection:React.FC<Props> = (props) => {
   return (
     <Wrapper>
       <label>
-        <Input label="备注" value={props.value} onChange={onChange} placeholder="填写备注" />
+        <Input size="large" maxLength={20} showCount value={props.value} onChange={onChange} placeholder="填写备注" />
       </label>
     </Wrapper>
   );

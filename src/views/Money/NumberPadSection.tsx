@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Wrapper} from "./NumberPadSection/Wrapper";
 import {generateOutput} from "./NumberPadSection/generateOutput";
-import { Button, Radio } from 'antd';
+import { Button} from 'antd';
 
 type Props = {
   value: number,
