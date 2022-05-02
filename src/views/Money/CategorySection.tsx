@@ -19,7 +19,7 @@ const Wrapper = styled.section`
 
       &.selected {
         background: lightblue;
-        trasiion: opacity 0.2s;
+        transition: opacity 8s;
         background: linear-gradient(to right, lightskyblue, lightskyblue);
         position: relative;
         z-index: 0;
@@ -31,7 +31,7 @@ const Wrapper = styled.section`
         background: linear-gradient(to right, #c1e3f7, #f2fcfe, #c1e3f7);
         opacity: 0;
         border-radius: 20px;
-        transition: opacity .5s;
+        transition: opacity 1s;
         z-index: -1;
       }
       &.selected:hover::before {

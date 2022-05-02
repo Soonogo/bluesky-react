@@ -29,7 +29,7 @@ const NumberPadSection: React.FC<Props> = (props) => {
     if (text === "OK") {
       props.onOK && props.onOK();
     }
-    if ("0123456789.".split("").concat("删除", "清空").indexOf(text) > -1) {
+    if ("0123456789.".split("").concat("删 除", "清 空").indexOf(text) > -1) {
       setOutput(generateOutput(text, output));
 
     }
@@ -40,20 +40,20 @@ const NumberPadSection: React.FC<Props> = (props) => {
         {output}
       </div>
       <div className="pad clearfix" onClick={onButtonWrapper}>
-        <button><span>1</span></button>
-        <Button type="primary" >2</Button>
-        <Button type="primary">3</Button>
-        <Button type="primary">删除</Button >
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>清空</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button className="ok">OK</button>
-        <button className="zero">0</button>
-        <button>.</button>
+        <Button ><span>1</span></Button>
+        <Button >2</Button>
+        <Button >3</Button>
+        <Button >删除</Button>
+        <Button >4</Button>
+        <Button >5</Button>
+        <Button >6</Button>
+        <Button >清空</Button>
+        <Button >7</Button>
+        <Button >8</Button>
+        <Button >9</Button>
+        <Button  className="ok">OK</Button>
+        <Button  className="zero">0</Button>
+        <Button >.</Button>
       </div>
     </Wrapper>
   );

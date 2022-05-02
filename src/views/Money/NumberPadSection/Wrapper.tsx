@@ -3,8 +3,8 @@ import styled from "styled-components";
 const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
-
   > .output {
+
     background: white;
     font-size: 36px;
     line-height: 72px;
@@ -14,19 +14,23 @@ const Wrapper = styled.section`
   }
 
   > .pad {
+
     > button {
-      width: 25%;
+      width: 24.5%;
       height: 72px;
       float: left;
       border: none;
+      margin:  1px;
+
 
       &.zero {
-        width: 50%;
+        width: 49.3%;
       }
 
       &.ok {
         height: 144px;
         float: right;
+        right:3px
       }
 
       &:nth-child(1) {

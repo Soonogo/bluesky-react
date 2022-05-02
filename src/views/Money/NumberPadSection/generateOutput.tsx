@@ -18,10 +18,10 @@ const generateOutput =(text:string, output ='0')=>{
     case ("."):
       if (output.indexOf(".") > -1) {return output; }
       return  output + ".";
-    case "删除":
+    case "删 除":
       if (output.length === 1) {return '';}
       return output.slice(0, - 1) || '';
-    case "清空":
+    case "清 空":
       return '';
     default:
       return '';
