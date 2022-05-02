@@ -2,6 +2,17 @@ import React, {useEffect, useState} from "react";
 import Layout from "../components/Layout";
 import {REcharts} from "./REcharts";
 import {useRecords} from "../hooks/useRecords";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+`;
+
 
 export const Chart = () => {
   const {records}= useRecords()
@@ -82,9 +93,11 @@ export const Chart = () => {
   },[])
   return (
         <Layout>
+          <Wrapper>
             <h1>Chart</h1>
           <REcharts option={option} loading={loading} />
           <button onClick={onClick}>刷新</button>
+          </Wrapper>  
         </Layout>
     );
 };
