@@ -30,7 +30,10 @@ function Money() {
   const submit=()=>{
     if (addRecord(selected)){
       setSelected(defaultFormData)
-      message.info('保存成功');
+      setTimeout(()=>{
+        message.info('保存成功');
+
+      },1000)
 
     }
   }

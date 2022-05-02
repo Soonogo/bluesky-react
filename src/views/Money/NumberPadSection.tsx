@@ -4,6 +4,7 @@ import {generateOutput} from "./NumberPadSection/generateOutput";
 // import { Button} from 'antd';
 import {CButton} from "../../components/Button";
 import {useHistory} from "react-router-dom";
+import {message} from "antd";
 
 type Props = {
   value: number,
@@ -31,9 +32,10 @@ const NumberPadSection: React.FC<Props> = (props) => {
     if (text === null) {return;}
     if (text === "OK") {
       props.onOK && props.onOK();
+      const hide = message.loading('Action in progress..', 0);
+      setTimeout(hide, 500);
       setTimeout(()=>{
         history.push('/chart');
-
       },1000)
     }
     if ("0123456789.".split("").concat("删 除", "清 空").indexOf(text) > -1) {
