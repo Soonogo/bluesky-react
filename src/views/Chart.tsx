@@ -32,16 +32,8 @@ const Cbutton = styled.button`
 
 export const Chart = () => {
   const {records}= useRecords()
-
-  // const xData =[
-  //   { value: 1048, name: 'Search Engine' },
-  //   { value: 735, name: 'Direct' },
-  // ]
-  //@ts-ignore
-  //@ts-nocheck
   const b = {'-':'支出','+':'收入'}
   const x = records.map(i=>({value:i.amount,name:b[i.category]}))
-  console.log(x);
   type Props={
     series:any
     tooltip:any
@@ -104,7 +96,6 @@ export const Chart = () => {
 
   }
   useEffect(()=>{
-    setInterval(()=>{    },2000)
     setOption({
       //@ts-ignore
       legend: {

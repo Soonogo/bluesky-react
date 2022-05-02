@@ -36,12 +36,13 @@ function Money() {
 
   return (
     <MyLayout scrollTop={9999}>
+      <CategorySection value={selected.category}
+                       onChange={category=>{onChange({category})}} />
         <TagSection value={selected.tagIds}
                   onChange={tagIds=>onChange({tagIds})}/>
       <NoteSection value={selected.note}
                    onChange={note=>{onChange({note})}} />
-      <CategorySection value={selected.category}
-                       onChange={category=>{onChange({category})}} />
+
       <NumberPadSection value={selected.amount}
                         onChange={amount=>{onChange({amount})}}
                         onOK={()=>{submit()}}

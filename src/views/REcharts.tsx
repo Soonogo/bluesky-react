@@ -15,7 +15,6 @@ export const REcharts =(props:any)=>{
   },[])
   useEffect(()=>{
     if (!myChart.current){return}
-    console.log(myChart.current);
     // @ts-ignore
     myChart.current.setOption(option)
   },[option])

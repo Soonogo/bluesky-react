@@ -30,11 +30,9 @@ const Wrapper = styled.section`
       }
 
       &:nth-child(1) {
-        background: blue;
       }
 
       &:nth-child(2) {
-        background: green;
       }
     }
   }

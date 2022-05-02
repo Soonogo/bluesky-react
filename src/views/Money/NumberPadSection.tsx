@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Wrapper} from "./NumberPadSection/Wrapper";
 import {generateOutput} from "./NumberPadSection/generateOutput";
-
+import { Button, Radio } from 'antd';
 
 type Props = {
   value: number,
@@ -41,9 +41,9 @@ const NumberPadSection: React.FC<Props> = (props) => {
       </div>
       <div className="pad clearfix" onClick={onButtonWrapper}>
         <button><span>1</span></button>
-        <button>2</button>
-        <button>3</button>
-        <button>删除</button>
+        <Button type="primary" >2</Button>
+        <Button type="primary">3</Button>
+        <Button type="primary">删除</Button >
         <button>4</button>
         <button>5</button>
         <button>6</button>
