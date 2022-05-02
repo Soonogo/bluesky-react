@@ -4,6 +4,7 @@ import {REcharts} from "./REcharts";
 import {useRecords} from "../hooks/useRecords";
 import styled from "styled-components";
 
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -11,6 +12,21 @@ const Wrapper = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
+`;
+const Cbutton = styled.button`
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #001529;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  &:hover {
+    background-color: #001529;
+  }
 `;
 
 
@@ -26,9 +42,15 @@ export const Chart = () => {
   const b = {'-':'支出','+':'收入'}
   const x = records.map(i=>({value:i.amount,name:b[i.category]}))
   console.log(x);
+  type Props={
+    series:any
+    tooltip:any
+    legend:any
+
+  }
   const [xData, setXData] = useState([5, 20, 36])
   const [loading,setLoading] =useState(false)
-  const [option,setOption] =useState({
+  const [option,setOption] =useState<Props>({
       tooltip: {
         trigger: 'item'
       },
@@ -83,20 +105,27 @@ export const Chart = () => {
   }
   useEffect(()=>{
     setInterval(()=>{    },2000)
-
-    let yData = parseInt( String(Math.random() * 10))
-      // @ts-ignore
-      setXData([...xData].push(yData))
-
+    setOption({
       //@ts-ignore
-      setOption({...option,series:[{...option.series,data:xData}]})
-  },[])
+      legend: {
+        top: '5%',
+        left: 'center'
+      },
+      tooltip: {
+        trigger: 'item'
+      },
+      series: [{
+        data: x
+      }]
+    })
+  },[records])
+
   return (
         <Layout>
           <Wrapper>
             <h1>Chart</h1>
           <REcharts option={option} loading={loading} />
-          <button onClick={onClick}>刷新</button>
+          <Cbutton onClick={onClick}>刷新</Cbutton>
           </Wrapper>  
         </Layout>
     );
