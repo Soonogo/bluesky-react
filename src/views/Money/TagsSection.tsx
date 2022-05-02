@@ -15,7 +15,7 @@ const Wrapper = styled.section`
     margin: 0 -6px;
 
     > li {
-      background: lightcoral;
+      background: #efefff;
       border-radius: 18px;
       display: inline-block;
       padding: 3px 18px;
@@ -23,7 +23,7 @@ const Wrapper = styled.section`
       margin: 8px 8px;
 
       &.selected {
-        background: white;
+        background: lightskyblue;
       }
     }
   }
