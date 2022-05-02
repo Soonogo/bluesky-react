@@ -40,16 +40,16 @@ const Nav = () => {
     <NavWrapper>
       <ul>
         <li>
-          <NavLink to="/tags"  activeClassName="selected"> <Icon name="tag"/>
-            标签页</NavLink>
+          <NavLink to="/chart"  activeClassName="selected"> <Icon name="tag"/>
+            图表</NavLink>
         </li>
         <li>
           <NavLink to="/money"  activeClassName="selected"> <Icon name="money"/>
-            记账页</NavLink>
+            记账</NavLink>
         </li>
         <li>
           <NavLink to="/statistics" activeClassName="selected"> <Icon name="chart"/>
-            统计页</NavLink>
+            统计</NavLink>
         </li>
       </ul>
     </NavWrapper>

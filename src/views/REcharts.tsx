@@ -2,13 +2,12 @@ import React, {useEffect, useRef} from "react";
 import * as echarts from 'echarts';
 
 export const REcharts =(props:any)=>{
-  const {opt} = props
+  const {option,loading} = props
   const container = useRef<HTMLDivElement>(null)
   const myChart = useRef(null)
   useEffect(()=>{
     if (!container.current){return}
     const width = document.body.clientWidth
-    console.log(width);
     container.current.style.width=`${width}px`
     container.current.style.height=`${width*1.2}px`
     // @ts-ignore
@@ -18,8 +17,18 @@ export const REcharts =(props:any)=>{
     if (!myChart.current){return}
     console.log(myChart.current);
     // @ts-ignore
-    myChart.current.setOption(opt)
-  },[opt])
+    myChart.current.setOption(option)
+  },[option])
+  useEffect(()=>{
+    if (loading){
+      // @ts-ignore
+      myChart.current.showLoading()
+    }else{
+      // @ts-ignore
+      myChart.current.hideLoading()
+    }
+
+  },[loading])
   return(
     <div ref={container} >hi</div>
   )

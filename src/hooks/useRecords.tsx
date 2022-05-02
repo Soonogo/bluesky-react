@@ -30,10 +30,7 @@ export const useRecords = () => {
       setRecords([...records, record]);
       return true
     }
-
-
   };
-
   useUpdate(() => {
     window.localStorage.setItem("records", JSON.stringify(records));
   }, records);

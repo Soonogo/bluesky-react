@@ -9,7 +9,7 @@ import styled from "styled-components";
 import {Chart} from "./views/Chart";
 
 const Wrapper = styled.div`
-  color: blueviolet;
+  color: #333;
   background-color: #fafafa;
 `;
 
