@@ -10,7 +10,20 @@ const Wrapper = styled.section`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
-
+  @keyframes shake{
+    10%, 90% {
+      transform: translate3d(-1px, -1px, 0);
+    }
+    20%, 80% {
+      transform: translate3d(2px, -2px, 0);
+    }
+    30%, 50%, 70% {
+      transform: translate3d(-4px, -4px, 0);
+    }
+    40%, 60% {
+      transform: translate3d(4px, -4px, 0);
+    }
+  }
   > ul {
     margin: 0 -6px;
 
@@ -21,9 +34,10 @@ const Wrapper = styled.section`
       padding: 3px 18px;
       font-size: 14px;
       margin: 8px 8px;
-
+      
       &.selected {
         background: lightskyblue;
+        animation: shake 800ms ease-in-out;
       }
     }
   }
