@@ -40,7 +40,6 @@ export const Chart = () => {
     legend:any
 
   }
-  const [xData, setXData] = useState([5, 20, 36])
   const [loading,setLoading] =useState(false)
   const [option,setOption] =useState<Props>({
       tooltip: {
