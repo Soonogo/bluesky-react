@@ -21,7 +21,6 @@ export const useRecords = () => {
   const addRecord = (newRecord: newRecordItem) => {
     if (newRecord.amount <= 0) {
       message.info('请输入金额');
-
       return false
         ;}
     if (newRecord.tagIds.length < 1) {

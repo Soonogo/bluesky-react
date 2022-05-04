@@ -7,6 +7,7 @@ import {TagSection} from "./Money/TagsSection";
 import {NoteSection} from "./Money/NoteSection";
 import {useRecords} from "../hooks/useRecords";
 import {message} from "antd";
+import {useHistory} from "react-router-dom";
 
 const MyLayout = styled(Layout)`
   display: flex;
@@ -26,13 +27,19 @@ function Money() {
   const onChange = (obj:Partial<typeof selected>)=>{
     setSelected({...selected,...obj})
   }
+  const history = useHistory();
+
   const {addRecord}=useRecords()
   const submit=()=>{
     if (addRecord(selected)){
       setSelected(defaultFormData)
+      const hide = message.loading('加载中..', 0);
+      setTimeout(hide, 500);
       setTimeout(()=>{
         message.info('保存成功');
-
+        setTimeout(()=>{
+          history.push('/chart');
+        },1000)
       },1000)
 
     }
